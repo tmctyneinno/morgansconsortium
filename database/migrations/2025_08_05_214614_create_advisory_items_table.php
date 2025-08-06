@@ -15,10 +15,10 @@ class CreateAdvisoryItemsTable extends Migration
     {
         Schema::create('advisory_items', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('image_path');
-            $table->text('description');
-            $table->text('content');
+            $table->string('title')->nullable();
+            $table->string('image_path')->nullable();
+            $table->text('description')->nullable();
+            $table->text('content')->nullable();
             $table->timestamps();
         }); 
     }
