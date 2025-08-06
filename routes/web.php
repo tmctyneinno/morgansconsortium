@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdvisoryController;
 use App\Http\Controllers\LandingController;
 
 /*
@@ -44,7 +45,8 @@ Route::prefix('subsidiaries')->group(function(){
     Route::get('/women-in-grc', [LandingController::class, 'womenInGrc'])->name('landing.womeningrc');
 });
 
-Route::get('careers',[LandingController::class, 'careers'])->name('landing.careers');
+Route::get('advisory/governing-council',[LandingController::class, 'advisoryCouncil'])->name('landing.advisoryCouncil'); 
+Route::get('careers',[LandingController::class, 'careers'])->name('landing.careers'); 
 Route::get('contact-us', [LandingController::class, 'contactUs'])->name('landing.contactUs');
 Route::post('contact-us/create', [LandingController::class, 'contactusCreate'])->name('contactusCreate');
 Route::get('privacy-policy', [LandingController::class, 'privacyPolicy'])->name('landing.privacyPolicy');
@@ -55,4 +57,13 @@ Route::post('newsletter-signup', [LandingController::class, 'newsletterSignup'])
 
 
 // Route::get('all-news', [LandingController::class, 'contactUs']);
+
+Route::prefix('admin')->group(function(){
+    Route::get('/advisory/index',[AdvisoryController::class, 'index'])->name('admin.advisory.index');
+    Route::get('/advisory/create',[AdvisoryController::class, 'create'])->name('admin.advisory.create');
+    Route::post('/advisory/store',[AdvisoryController::class, 'store'])->name('admin.advisory.store');
+    Route::get('/advisory/edit/{id}',[AdvisoryController::class, 'edit'])->name('admin.advisory.edit');
+    Route::put('/advisory/update/{id}',[AdvisoryController::class, 'update'])->name('admin.advisory.update');
+    Route::delete('/advisory/destroy/{id}',[AdvisoryController::class, 'destroy'])->name('admin.advisory.destroy');
+});
 

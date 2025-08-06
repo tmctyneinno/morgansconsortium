@@ -113,12 +113,17 @@
                         </li>
                     </ul>
                 </li>
+                <li class="{{request()->is('advisory/governing-council/*') || request()->is('advisory-council')? 'active': ''}}">
+                    <a href="{{route('landing.advisoryCouncil')}}" class="">
+                        <i class="las la-briefcase iq-arrow-left"></i>
+                        <span>ADVISORY COUNCIL</span>
+                    </a>
+                </li>
                 <li class="{{request()->is('careers')? 'active': ''}}">
                     <a href="{{route('landing.careers')}}" class="">
                         <i class="las la-briefcase iq-arrow-left"></i>
                         <span>CAREERS</span>
                     </a>
-                    
                 </li>
                 <!-- <li class=" ">
                     <a href="#ui" class="">

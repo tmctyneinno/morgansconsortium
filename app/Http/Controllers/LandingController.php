@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use App\Models\AdvisoryItem;
 use Stevebauman\Location\Facades\Location;
 
 class LandingController extends Controller
@@ -99,8 +101,14 @@ class LandingController extends Controller
     }
 
     public function advisory(){
-        return view('pages.advisory');
+        return view('pages.advisory', );
     }
+
+    public function advisoryCouncil(){
+        $items = AdvisoryItem::all();
+        return view('pages.advisory_council', compact('items'));
+    }
+    
     public function grcFinCrimeAwards(){
         return view('pages.grcfincrimeawards');
     }
