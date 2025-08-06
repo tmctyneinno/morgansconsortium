@@ -115,7 +115,7 @@
                 </li>
                 <li class="{{request()->is('advisory/governing-council/*') || request()->is('advisory-council')? 'active': ''}}">
                     <a href="{{route('landing.advisoryCouncil')}}" class="">
-                        <i class="las la-briefcase iq-arrow-left"></i>
+                        <i class="las la-user-friends iq-arrow-left"></i>
                         <span>ADVISORY COUNCIL</span>
                     </a>
                 </li>
