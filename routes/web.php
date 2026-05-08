@@ -19,7 +19,7 @@ use App\Http\Controllers\LandingController;
 //     return view('welcome');
 // });
 
-Route::get('/', [LandingController::class, 'index'])->name('landing.index');
+Route::get('/', [LandingController::class, 'index'])->name('landing.index'); 
 Route::prefix('about-the-morgans')->group(function(){
     Route::get('/', [LandingController::class, 'about'])->name('landing.about');
     Route::get('/our-business-approach', [LandingController::class, 'ourBusinessApproach'])->name('landing.ourBusinessApproach');

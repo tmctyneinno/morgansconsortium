@@ -3,7 +3,7 @@
 
 <head>
     @include('partials.head')
-</head>
+</head> 
 
 <body class="landing-style-1 sidebar-main">
     <!-- loader Start -->
@@ -12,7 +12,7 @@
     <!-- Wrapper Start -->
     <div class="wrapper">
         @include('partials.sidebar')
-
+ 
         @include('partials.topnav')
         <div class="content-page" style="padding:0px;">
             <!-- Banner -->
@@ -52,9 +52,9 @@
                                         <li class="nav-item">
                                             <a class="nav-link active" style="font-weight:700;font-size:large" id="bod-tab" data-toggle="tab" href="#bod" role="tab" aria-controls="bod" aria-selected="true">Board of Directors</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <!-- <li class="nav-item">
                                             <a class="nav-link" style="font-weight:700;font-size:large" id="mt-tab" data-toggle="tab" href="#mt" role="tab" aria-controls="mt" aria-selected="false">Our Team</a>
-                                        </li>
+                                        </li> -->
 
                                     </ul>
                                     <div class="tab-content" id="myTabContent-2">
@@ -306,7 +306,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="mt" role="tabpanel" aria-labelledby="mt-tab">
+                                        <!-- <div class="tab-pane fade" id="mt" role="tabpanel" aria-labelledby="mt-tab">
                                             <div class="row">
                                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                                     <div class="single-team-member">
@@ -454,7 +454,7 @@
                                                 </div>
                                                
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </section>
                             </div>

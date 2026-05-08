@@ -19,7 +19,7 @@
             <!-- Banner -->
             <div id="iq-home" class="iq-banner-software" style="height:75vh">
                 <div class="google-map-wrap">
-                    @if($position->countryName == 'Nigeria')
+                    @if(optional($position)->countryName == 'Nigeria')
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4079673977717!2d3.342494315339153!3d6.596112124143522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b922431bb3a15%3A0xf9fd93e3911f8272!2s1%20Adeola%20Adeoye%20St%2C%20Opebi%20101233%2C%20Ikeja!5e0!3m2!1sen!2sng!4v1646049447368!5m2!1sen!2sng" style="border:0;height:100%;width:100%;filter: brightness( 70% ) contrast( 100% ) saturate( 100% ) blur( 0px ) hue-rotate( 0deg );" allowfullscreen="" loading="lazy"></iframe>
                     @else
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4965.128498772497!2d0.02277225040369267!3d51.52120990841268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a7d95d6a1491%3A0x6b0a90e4c7b64fdb!2sInternational%20House%2C%2024%20Holborn%20Rd%2C%20London%20EC1A%202BN%2C%20UK!5e0!3m2!1sen!2sng!4v1646053920175!5m2!1sen!2sng" style="border:0;height:100%;width:100%;filter: brightness( 70% ) contrast( 100% ) saturate( 100% ) blur( 0px ) hue-rotate( 0deg );" allowfullscreen="" loading="lazy"></iframe>

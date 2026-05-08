@@ -116,10 +116,9 @@ class LandingController extends Controller
         return view('pages.careers');
     }
     public function contactUs(){
-        if ($position = Location::get(request()->getClientIp())){
-            return view('pages.contact_us')->with(['position' => $position]);
-        }
-        // return view('pages.contact_us');
+        $position = Location::get(request()->getClientIp());
+
+        return view('pages.contact_us')->with(['position' => $position]);
     }
 
     public function privacyPolicy()
