@@ -47,8 +47,7 @@
                                     <h1 class="text-capitalize "  style="color: #ffffff;">
                                         Advisory Governing Council </h1>
                                     <h3 class="pt-3" style="color:#ffffff">
-                                        Over the years, THE MORGANS has proven to deliver excellent, simplified process and
-                                        optimum services to its clients. THE MORGANS operates in the UK & Nigeria</h3>
+                                        </h3>
                                 </div>
                             </div>
                         </div>
