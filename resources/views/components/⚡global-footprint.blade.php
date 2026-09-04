@@ -52,8 +52,8 @@ new class extends Component
 ?>
 
 <div>
-    <section class="py-20 lg:py-32 bg-white dark:bg-gray-950 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="py-20 lg:py-25 bg-white dark:bg-gray-950 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {{-- Header Section --}}
             <div class="mb-16 max-w-4xl">
@@ -62,7 +62,7 @@ new class extends Component
                     <span class="text-[#c41e3a] text-xs font-bold tracking-[0.2em] uppercase">Global Footprint</span>
                 </div>
                 
-                <h2 class="text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-[#1e3a5f] dark:text-white mb-6 leading-tight">
+                <h2 class="text-4xl lg:text-4xl xl:text-4xl font-serif font-bold text-[#1e3a5f] dark:text-white mb-6 leading-tight">
                     Offices on three continents. Working on five.
                 </h2>
                 
@@ -75,10 +75,10 @@ new class extends Component
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden">
                 
                 @foreach($regions as $index => $region)
-                    <div class="p-8 lg:p-10 {{ $index < count($regions) - 1 ? 'border-r border-gray-200 dark:border-gray-800' : '' }} {{ $index < 3 ? 'md:border-b lg:border-b-0' : '' }} hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors duration-300">
+                    <div class="p-7 lg:p-8 {{ $index < count($regions) - 1 ? 'border-r border-gray-200 dark:border-gray-800' : '' }} {{ $index < 3 ? 'md:border-b lg:border-b-0' : '' }} hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors duration-300">
                         
                         {{-- Region Name --}}
-                        <h3 class="text-2xl lg:text-3xl font-serif font-bold text-[#1e3a5f] dark:text-white mb-6">
+                        <h3 class="text-2xl lg:text-2xl font-serif font-bold text-[#1e3a5f] dark:text-white mb-6">
                             {{ $region['name'] }}
                         </h3>
 

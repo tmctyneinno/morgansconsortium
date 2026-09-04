@@ -5,4 +5,5 @@
      <livewire:who-are-we />
      <livewire:group-register />
      <livewire:global-footprint />
+     <livewire:institutional-bodies />
 @endsection 
