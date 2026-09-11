@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Risk & Assurance Intelligence | THE MORGANS')
+@section('title', 'Facilities & Infrastructure Management | THE MORGANS')
 
 @section('content')
     <livewire:banner

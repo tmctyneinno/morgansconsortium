@@ -10,9 +10,8 @@ new class extends Component
 
     public function mount()
     {
-        if (request()->routeIs('advisory-assurance', 'risk-assurance-intelligence')) {
-            $this->activeLink = 'the-group';
-
+        if ($this->isGroupRouteActive()) {
+            $this->activeLink = request()->route()->getName();
             return;
         }
 
@@ -24,6 +23,31 @@ new class extends Component
     public function setActiveLink($link)
     {
         $this->activeLink = $link;
+    }
+
+    public function dropdownLinkClass($route): string
+{
+    return $this->activeLink === $route
+        ? 'text-[#c41e3a] border-l-4 border-[#c41e3a] pl-3'
+        : '';
+}
+
+    public function isGroupRouteActive(): bool
+    {
+        return in_array(request()->route()->getName(), [
+            'advisory-assurance',
+            'risk-assurance-intelligence',
+            'oysterChecks',
+            'tmc-institute',
+            'grc-fincrime-prevention-awards-summit',
+            'wgrcfp',
+            'portrec-resourcing',
+            'tyneside-innovation',
+            'procurement-supply-chain',
+            'real-estate-property-development',
+            'facilities-infrastructure-management',
+            'tyneprints',
+        ], true);
     }
 
     public function toggleMobileMenu()
@@ -142,9 +166,9 @@ new class extends Component
                     <div class="group relative">
                         <a
                             href="{{ route('careers') }}"
-                            class="flex items-center gap-1 text-sm font-semibold tracking-wider uppercase transition-colors duration-200 {{ $activeLink === 'careers' ? 'text-[#1e3a5f] dark:text-white border-b-2 border-[#c41e3a] pb-1' : 'text-[#1e3a5f] dark:text-gray-300 hover:text-[#c41e3a] dark:hover:text-white' }}"
+                            class="flex items-center gap-1 text-sm font-semibold tracking-wider uppercase transition-colors duration-200 {{ $activeLink === 'careers' || $this->isGroupRouteActive() ? 'text-[#1e3a5f] dark:text-white border-b-2 border-[#c41e3a] pb-1' : 'text-[#1e3a5f] dark:text-gray-300 hover:text-[#c41e3a] dark:hover:text-white' }}"
                             aria-haspopup="true"
-                        > 
+                        >
                             Careers
                             <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -153,17 +177,18 @@ new class extends Component
 
                         <div class="invisible absolute left-1/2 top-full z-50 w-100 -translate-x-1/2 pt-5 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                             <div class="border border-gray-100 bg-white p-2 shadow-xl dark:border-gray-700 dark:bg-gray-900">
-                                <a href="{{ route('advisory-assurance') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800">Advisory & Assurance</a>
-                                <a href="{{ route('risk-assurance-intelligence') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800">Risk & Assurance Intelligence</a>
-                                <a href="{{ route('tmc-institute') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800">TMC Institute - Executive Education</a>
-                                <a href="{{ route('grc-fincrime-prevention-awards-summit') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800">GRC & FinCrime Prevention Awards & Summit</a>
-                                <a href="{{ route('wgrcfp') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800">WGRCFP — Women in GRC & FinCrime Prevention</a>
-                                <a href="{{ route('portrec-resourcing') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800">Portrec Resourcing — Talent & Workforce</a>
-                                <a href="{{ route('tyneside-innovation') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800">Tyneside Innovation — Technology & Digital</a>
-                                <a href="{{ route('procurement-supply-chain') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800">Procurement & Supply Chain</a>
-                                <a href="{{ route('real-estate-property-development') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800">Real Estate & Property Development</a>
-                                <a href="{{ route('facilities-infrastructure-management') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800">Facilities & Infrastructure Management</a>
-                                <a href="{{ route('tyneprints') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800">Tyneprints — Print & Brand Production</a>
+                                <a href="{{ route('advisory-assurance') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800 {{ $this->dropdownLinkClass('advisory-assurance') }}" aria-current="{{ request()->routeIs('advisory-assurance') ? 'page' : 'false' }}">Advisory & Assurance</a>
+                                <a href="{{ route('risk-assurance-intelligence') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800 {{ $this->dropdownLinkClass('risk-assurance-intelligence') }}" aria-current="{{ request()->routeIs('risk-assurance-intelligence') ? 'page' : 'false' }}">Risk & Assurance Intelligence</a>
+                                <a href="{{ route('oysterChecks') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800 {{ $this->dropdownLinkClass('oysterChecks') }}" aria-current="{{ request()->routeIs('oysterChecks') ? 'page' : 'false' }}">OysterChecks — Risk & Assurance Intelligence</a>
+                                <a href="{{ route('tmc-institute') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800 {{ $this->dropdownLinkClass('tmc-institute') }}" aria-current="{{ request()->routeIs('tmc-institute') ? 'page' : 'false' }}">TMC Institute - Executive Education</a>
+                                <a href="{{ route('grc-fincrime-prevention-awards-summit') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800 {{ $this->dropdownLinkClass('grc-fincrime-prevention-awards-summit') }}" aria-current="{{ request()->routeIs('grc-fincrime-prevention-awards-summit') ? 'page' : 'false' }}">GRC & FinCrime Prevention Awards & Summit</a>
+                                <a href="{{ route('wgrcfp') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800 {{ $this->dropdownLinkClass('wgrcfp') }}" aria-current="{{ request()->routeIs('wgrcfp') ? 'page' : 'false' }}">WGRCFP — Women in GRC & FinCrime Prevention</a>
+                                <a href="{{ route('portrec-resourcing') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800 {{ $this->dropdownLinkClass('portrec-resourcing') }}" aria-current="{{ request()->routeIs('portrec-resourcing') ? 'page' : 'false' }}">Portrec Resourcing — Talent & Workforce</a>
+                                <a href="{{ route('tyneside-innovation') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800 {{ $this->dropdownLinkClass('tyneside-innovation') }}" aria-current="{{ request()->routeIs('tyneside-innovation') ? 'page' : 'false' }}">Tyneside Innovation — Technology & Digital</a>
+                                <a href="{{ route('procurement-supply-chain') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800 {{ $this->dropdownLinkClass('procurement-supply-chain') }}" aria-current="{{ request()->routeIs('procurement-supply-chain') ? 'page' : 'false' }}">Procurement & Supply Chain</a>
+                                <a href="{{ route('real-estate-property-development') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800 {{ $this->dropdownLinkClass('real-estate-property-development') }}" aria-current="{{ request()->routeIs('real-estate-property-development') ? 'page' : 'false' }}">Real Estate & Property Development</a>
+                                <a href="{{ route('facilities-infrastructure-management') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800 {{ $this->dropdownLinkClass('facilities-infrastructure-management') }}" aria-current="{{ request()->routeIs('facilities-infrastructure-management') ? 'page' : 'false' }}">Facilities & Infrastructure Management</a>
+                                <a href="{{ route('tyneprints') }}" class="block px-2 py-3 text-sm font-semibold text-[#1e3a5f] transition-colors hover:bg-gray-50 hover:text-[#c41e3a] dark:text-gray-200 dark:hover:bg-gray-800 {{ $this->dropdownLinkClass('tyneprints') }}" aria-current="{{ request()->routeIs('tyneprints') ? 'page' : 'false' }}">Tyneprints — Print & Brand Production</a>
                                
                             </div>
                         </div>
@@ -243,7 +268,7 @@ new class extends Component
                 </a>
                 <a 
                     href="{{ route('careers') }}"
-                    class="block text-sm font-semibold tracking-wider uppercase py-2 {{ $activeLink === 'careers' ? 'text-[#c41e3a] border-l-4 border-[#c41e3a] pl-3' : 'text-[#1e3a5f] dark:text-gray-300' }}"
+                    class="block text-sm font-semibold tracking-wider uppercase py-2 {{ $activeLink === 'careers' || $this->isGroupRouteActive() ? 'text-[#c41e3a] border-l-4 border-[#c41e3a] pl-3' : 'text-[#1e3a5f] dark:text-gray-300' }}"
                 >
                     Careers
                 </a>

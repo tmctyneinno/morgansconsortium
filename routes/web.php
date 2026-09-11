@@ -35,6 +35,10 @@ Route::get('/tmc-institute', [PageController::class, 'show'])
     ->defaults('page', 'tmc-institute')
     ->name('tmc-institute');
 
+Route::get('/oysterchecks-risk-assurance-intelligence', [PageController::class, 'show'])
+    ->defaults('page', 'oysterChecks')
+    ->name('oysterChecks');
+
 Route::get('/grc-fincrime-prevention-awards-summit', [PageController::class, 'show'])
     ->defaults('page', 'grc-fincrime-prevention-awards-summit')
     ->name('grc-fincrime-prevention-awards-summit');

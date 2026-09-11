@@ -12,6 +12,7 @@ class PageController extends Controller
         $pages = [
             'home' => ['view' => 'welcome'],
             'about' => ['view' => 'about'],
+            'oysterChecks' => ['method' => 'oysterChecks'],
             'institutions' => ['view' => 'institutions'],
             'careers' => ['view' => 'careers'],
             'connect' => ['view' => 'connect'],
@@ -49,7 +50,12 @@ class PageController extends Controller
 
     public function tmcInstitute(): View
     {
-        return view('institutions');
+        return view('careers.tmc-institute');
+    }
+
+    public function oysterChecks(): View
+    {
+        return view('careers.oysterChecks');
     }
 
     public function awardsSummit(): View
@@ -59,17 +65,17 @@ class PageController extends Controller
 
     public function wgrcfp(): View
     {
-        return view('institutions');
+        return view('careers.wgrcfp');
     }
 
     public function portrecResourcing(): View
     {
-        return view('careers');
+        return view('careers.portrecResourcing');
     }
 
     public function tynesideInnovation(): View
     {
-        return view('careers');
+        return view('careers.tyneside-innovation');
     }
 
     public function procurementSupplyChain(): View
