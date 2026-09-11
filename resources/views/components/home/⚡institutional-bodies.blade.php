@@ -40,7 +40,7 @@ new class extends Component
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {{-- Header Section --}}
-            <div class="mb-16 max-w-4xl">
+            <div class="mb-10 max-w-7xl">
                 <div class="flex items-center space-x-4 mb-6">
                     <div class="h-[2px] w-12 bg-[#c41e3a]"></div>
                     <span class="text-[#c41e3a] text-xs font-bold tracking-[0.2em] uppercase">Institutional Bodies</span>
@@ -50,7 +50,7 @@ new class extends Component
                     The institutions the group convenes.
                 </h2>
                 
-                <p class="text-lg text-gray-300 dark:text-gray-400 leading-relaxed max-w-6xl">
+                <p class="text-lg text-gray-300 dark:text-gray-400 leading-relaxed max-w-7xl">
                     Beyond its operating companies, THE MORGANS architects and stewards professional institutions that set standards, educate practitioners and convene the global governance, risk, compliance and financial-crime prevention community.
                 </p>
             </div>
@@ -67,7 +67,7 @@ new class extends Component
                         </span>
 
                         {{-- Title --}}
-                        <h3 class="text-xl lg:text-2xl font-serif font-bold text-white mb-4 leading-snug">
+                        <h3 class="text-xl lg:text-1xl font-serif font-bold text-white mb-4 leading-snug">
                             {{ $institution['title'] }}
                         </h3>
 
@@ -100,7 +100,7 @@ new class extends Component
                         <span class="block text-[#c41e3a] text-xs font-bold tracking-[0.2em] uppercase">
                             7th Annual . Two Editions . 2026
                         </span>
-                        <h3 class="text-2xl lg:text-3xl font-serif font-bold text-white leading-snug max-w-2xl">
+                        <h3 class="text-2xl lg:text-2xl font-serif font-bold text-white leading-snug max-w-2xl">
                             GRC & FinCrime Prevention Awards & Summit — London, 6 November · Nairobi, 20 November
                         </h3>
                     </div>
