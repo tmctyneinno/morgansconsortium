@@ -15,7 +15,7 @@ new class extends Component
             return;
         }
 
-        $this->activeLink = request()->routeIs('about', 'institutions', 'careers', 'connect')
+        $this->activeLink = request()->routeIs('about', 'group', 'institutions', 'careers', 'connect')
             ? request()->route()->getName()
             : 'home';
     }
@@ -137,33 +137,40 @@ new class extends Component
                     >
                         Home
                     </a>
-                    <a 
+                     <a 
                         href="{{ route('about') }}"
                         class="text-sm font-semibold tracking-wider uppercase transition-colors duration-200 {{ $activeLink === 'about' ? 'text-[#1e3a5f] dark:text-white border-b-2 border-[#c41e3a] pb-1' : 'text-[#1e3a5f] dark:text-gray-300 hover:text-[#c41e3a] dark:hover:text-white' }}"
                     >
                         About
                     </a>
                     <a 
-                        wire:click.prevent="setActiveLink('the-group')"
-                        href="#"
-                        class="text-sm font-semibold tracking-wider uppercase transition-colors duration-200 {{ $activeLink === 'the-group' ? 'text-[#1e3a5f] dark:text-white border-b-2 border-[#c41e3a] pb-1' : 'text-[#1e3a5f] dark:text-gray-300 hover:text-[#c41e3a] dark:hover:text-white' }}"
+                        href="{{ route('group') }}"
+                        class="text-sm font-semibold tracking-wider uppercase transition-colors duration-200 {{ $activeLink === 'group' ? 'text-[#1e3a5f] dark:text-white border-b-2 border-[#c41e3a] pb-1' : 'text-[#1e3a5f] dark:text-gray-300 hover:text-[#c41e3a] dark:hover:text-white' }}"
                     >
                         The Group
                     </a>
+                   
                     <a 
                         href="{{ route('institutions') }}"
                         class="text-sm font-semibold tracking-wider uppercase transition-colors duration-200 {{ $activeLink === 'institutions' ? 'text-[#1e3a5f] dark:text-white border-b-2 border-[#c41e3a] pb-1' : 'text-[#1e3a5f] dark:text-gray-300 hover:text-[#c41e3a] dark:hover:text-white' }}"
                     >
                         Institutions
                     </a>
-                    <a 
+                    
+                    <!-- <a 
                         wire:click.prevent="setActiveLink('clients')"
                         href="#"
                         class="text-sm font-semibold tracking-wider uppercase transition-colors duration-200 {{ $activeLink === 'clients' ? 'text-[#1e3a5f] dark:text-white border-b-2 border-[#c41e3a] pb-1' : 'text-[#1e3a5f] dark:text-gray-300 hover:text-[#c41e3a] dark:hover:text-white' }}"
                     >
                         Clients
+                    </a> -->
+                    <a 
+                        href="{{ route('careers') }}"
+                        class="text-sm font-semibold tracking-wider uppercase transition-colors duration-200 {{ $activeLink === 'careers' ? 'text-[#1e3a5f] dark:text-white border-b-2 border-[#c41e3a] pb-1' : 'text-[#1e3a5f] dark:text-gray-300 hover:text-[#c41e3a] dark:hover:text-white' }}"
+                    >
+                        Careers
                     </a>
-                    <div class="group relative">
+                    <!-- <div class="group relative">
                         <a
                             href="{{ route('careers') }}"
                             class="flex items-center gap-1 text-sm font-semibold tracking-wider uppercase transition-colors duration-200 {{ $activeLink === 'careers' || $this->isGroupRouteActive() ? 'text-[#1e3a5f] dark:text-white border-b-2 border-[#c41e3a] pb-1' : 'text-[#1e3a5f] dark:text-gray-300 hover:text-[#c41e3a] dark:hover:text-white' }}"
@@ -192,7 +199,7 @@ new class extends Component
                                
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <a 
                         href="{{ route('connect') }}"
                         class="text-sm font-semibold tracking-wider uppercase transition-colors duration-200 {{ $activeLink === 'connect' ? 'text-[#1e3a5f] dark:text-white border-b-2 border-[#c41e3a] pb-1' : 'text-[#1e3a5f] dark:text-gray-300 hover:text-[#c41e3a] dark:hover:text-white' }}"
@@ -247,25 +254,25 @@ new class extends Component
                     About
                 </a>
                 <a 
-                    wire:click.prevent="setActiveLink('the-group')"
-                    href="#"
-                    class="block text-sm font-semibold tracking-wider uppercase py-2 {{ $activeLink === 'the-group' ? 'text-[#c41e3a] border-l-4 border-[#c41e3a] pl-3' : 'text-[#1e3a5f] dark:text-gray-300' }}"
+                    href="{{ route('group') }}"
+                    class="block text-sm font-semibold tracking-wider uppercase py-2 {{ $activeLink === 'group' ? 'text-[#c41e3a] border-l-4 border-[#c41e3a] pl-3' : 'text-[#1e3a5f] dark:text-gray-300' }}"
                 >
                     The Group
                 </a>
+                
                 <a 
                     href="{{ route('institutions') }}"
                     class="block text-sm font-semibold tracking-wider uppercase py-2 {{ $activeLink === 'institutions' ? 'text-[#c41e3a] border-l-4 border-[#c41e3a] pl-3' : 'text-[#1e3a5f] dark:text-gray-300' }}"
                 >
                     Institutions
                 </a>
-                <a 
+                <!-- <a 
                     wire:click.prevent="setActiveLink('clients')"
                     href="#"
                     class="block text-sm font-semibold tracking-wider uppercase py-2 {{ $activeLink === 'clients' ? 'text-[#c41e3a] border-l-4 border-[#c41e3a] pl-3' : 'text-[#1e3a5f] dark:text-gray-300' }}"
                 >
                     Clients
-                </a>
+                </a> -->
                 <a 
                     href="{{ route('careers') }}"
                     class="block text-sm font-semibold tracking-wider uppercase py-2 {{ $activeLink === 'careers' || $this->isGroupRouteActive() ? 'text-[#c41e3a] border-l-4 border-[#c41e3a] pl-3' : 'text-[#1e3a5f] dark:text-gray-300' }}"

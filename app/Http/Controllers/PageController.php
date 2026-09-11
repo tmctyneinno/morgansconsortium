@@ -12,6 +12,7 @@ class PageController extends Controller
         $pages = [
             'home' => ['view' => 'welcome'],
             'about' => ['view' => 'about'],
+            'group' => ['view' => 'group'],
             'oysterChecks' => ['method' => 'oysterChecks'],
             'institutions' => ['view' => 'institutions'],
             'careers' => ['view' => 'careers'],

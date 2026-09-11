@@ -50,7 +50,7 @@ new class extends Component
                     {{-- CTA Buttons --}}
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a 
-                            href="#" 
+                            href="{{ route('group') }}" 
                             class="inline-flex items-center justify-center px-8 py-4 text-sm font-semibold tracking-wider uppercase text-white bg-[#c41e3a] rounded-md hover:bg-[#a01830] transition-all duration-200 group shadow-lg shadow-[#c41e3a]/20"
                         >
                             Explore The Group Register
@@ -59,7 +59,7 @@ new class extends Component
                             </svg>
                         </a>
                         <a 
-                            href="#" 
+                            href="{{ route('group') }}" 
                             class="inline-flex items-center justify-center px-8 py-4 text-sm font-semibold tracking-wider uppercase text-white border border-white/40 dark:border-gray-500 rounded-md hover:bg-white/10 dark:hover:bg-gray-800/50 transition-all duration-200 backdrop-blur-sm"
                         >
                             About The Group

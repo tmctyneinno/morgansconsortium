@@ -10,7 +10,7 @@ new class extends Component
             'title' => 'Advisory & Assurance',
             'category' => 'ADVISORY',
             'description' => "The group's international advisory practice — governance, enterprise risk, regulatory compliance and financial-crime prevention for banks, insurers, fintechs and public institutions worldwide.",
-            'links' => [['text' => 'VISIT DIVISION', 'url' => '#']]
+            'links' => [['text' => 'VISIT DIVISION', 'url' => 'advisory-assurance']]
         ],
         [
             'id' => '02',
@@ -18,8 +18,8 @@ new class extends Component
             'category' => 'TECHNOLOGY',
             'description' => "A unified, AI-driven risk and assurance intelligence platform — real-time identity verification, global background screening, KYC/KYB, AML surveillance and continuous control monitoring, built to help organisations prove trust in real time.",
             'links' => [
-                ['text' => 'VISIT DIVISION', 'url' => '#'],
-                ['text' => 'OYSTERCHECKS.COM', 'url' => '#', 'external' => true]
+                ['text' => 'VISIT DIVISION', 'url' => 'oysterChecks'],
+                ['text' => 'OYSTERCHECKS.COM', 'url' => 'oysterChecks', 'external' => true]
             ]
         ],
         [
@@ -28,8 +28,8 @@ new class extends Component
             'category' => 'INSTITUTIONAL',
             'description' => "The group's executive education arm — board-level programmes, professional certification pathways and bespoke corporate academies, delivered to international cohorts in person and online.",
             'links' => [
-                ['text' => 'VISIT DIVISION', 'url' => '#'],
-                ['text' => 'TMCINSTITUTE.COM', 'url' => '#', 'external' => true]
+                ['text' => 'VISIT DIVISION', 'url' => 'tmc-institute'],
+                ['text' => 'TMCINSTITUTE.COM', 'url' => 'tmc-institute', 'external' => true]
             ]
         ],
         [
@@ -38,8 +38,8 @@ new class extends Component
             'category' => 'INSTITUTIONAL',
             'description' => "The profession's flagship awards and summit — now in its 7th annual edition, staged across two global editions in 2026: London on 6 November and Nairobi on 20 November, with six award pillars and 40+ categories.",
             'links' => [
-                ['text' => 'VISIT DIVISION', 'url' => '#'],
-                ['text' => 'GRCFINCRIMEAWARDS.COM', 'url' => '#', 'external' => true]
+                ['text' => 'VISIT DIVISION', 'url' => 'grc-fincrime-prevention-awards-summit'],
+                ['text' => 'GRCFINCRIMEAWARDS.COM', 'url' => 'grc-fincrime-prevention-awards-summit', 'external' => true]
             ]
         ],
         [
@@ -48,8 +48,8 @@ new class extends Component
             'category' => 'INSTITUTIONAL',
             'description' => "A worldwide community and structured mentorship programme advancing women in governance, risk, compliance and financial-crime prevention — with measured outcomes, not just good intentions.",
             'links' => [
-                ['text' => 'VISIT DIVISION', 'url' => '#'],
-                ['text' => 'WGRCFP.ORG', 'url' => '#', 'external' => true]
+                ['text' => 'VISIT DIVISION', 'url' => 'wgrcfp'],
+                ['text' => 'WGRCFP.ORG', 'url' => 'wgrcfp', 'external' => true]
             ]
         ],
         [
@@ -58,8 +58,8 @@ new class extends Component
             'category' => 'ENTERPRISE SERVICES',
             'description' => "The group's recruitment and workforce brand — executive search, specialist recruitment and managed outsourcing, with dedicated candidate portals serving markets on multiple continents.",
             'links' => [
-                ['text' => 'VISIT DIVISION', 'url' => '#'],
-                ['text' => 'PORTREC.CO.UK', 'url' => '#', 'external' => true]
+                ['text' => 'VISIT DIVISION', 'url' => 'portrec-resourcing'],
+                ['text' => 'PORTREC.CO.UK', 'url' => 'portrec-resourcing', 'external' => true]
             ]
         ],
         [
@@ -68,8 +68,8 @@ new class extends Component
             'category' => 'TECHNOLOGY',
             'description' => "The group's technology and digital agency — web and app development, enterprise IT solutions, digital marketing, SEO and brand design, with more than 2,000 clients served across three continents.",
             'links' => [
-                ['text' => 'VISIT DIVISION', 'url' => '#'],
-                ['text' => 'TYNESIDEINNOVATION.COM', 'url' => '#', 'external' => true]
+                ['text' => 'VISIT DIVISION', 'url' => 'tyneside-innovation'],
+                ['text' => 'TYNESIDEINNOVATION.COM', 'url' => 'tyneside-innovation', 'external' => true]
             ]
         ],
         [
@@ -77,7 +77,7 @@ new class extends Component
             'title' => 'Procurement & Supply Chain',
             'category' => 'ENTERPRISE SERVICES',
             'description' => "International sourcing, negotiation and supply-chain management run with the transparency and value discipline of an institutional buyer — from single tenders to full category management.",
-            'links' => [['text' => 'VISIT DIVISION', 'url' => '#']]
+            'links' => [['text' => 'VISIT DIVISION', 'url' => 'procurement-supply-chain']]
         ],
         [
             'id' => '09',
@@ -91,7 +91,7 @@ new class extends Component
             'title' => 'Facilities & Infrastructure Management',
             'category' => 'ENTERPRISE SERVICES',
             'description' => "Integrated facilities management for estates, offices and operational sites — keeping mission-critical environments running safely, efficiently and to a single global standard.",
-            'links' => [['text' => 'VISIT DIVISION', 'url' => '#']]
+            'links' => [['text' => 'VISIT DIVISION', 'url' => 'facilities-infrastructure-management']]
         ],
         [
             'id' => '11',
@@ -99,14 +99,14 @@ new class extends Component
             'category' => 'ENTERPRISE SERVICES',
             'description' => "The group's print and brand-production house — an online print platform delivering business stationery, large-format signage, corporate gifts and event collateral to homes and businesses, with instant quotes and doorstep delivery.",
             'links' => [
-                ['text' => 'VISIT DIVISION', 'url' => '#'],
-                ['text' => 'TYNEPRINTS.COM', 'url' => '#', 'external' => true]
+                ['text' => 'VISIT DIVISION', 'url' => 'tyneprints'],
+                ['text' => 'TYNEPRINTS.COM', 'url' => 'tyneprints', 'external' => true]
             ]
         ],
     ];
 };
 ?>
-
+ 
 <div>
     <section class="py-20 lg:py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

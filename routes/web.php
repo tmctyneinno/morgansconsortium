@@ -11,6 +11,10 @@ Route::get('/about', [PageController::class, 'show'])
     ->defaults('page', 'about')
     ->name('about');
 
+Route::get('/group', [PageController::class, 'show'])
+    ->defaults('page', 'group')
+    ->name('group');
+
 Route::get('/institutions', [PageController::class, 'show'])
     ->defaults('page', 'institutions')
     ->name('institutions');
