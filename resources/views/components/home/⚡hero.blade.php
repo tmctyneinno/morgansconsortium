@@ -61,7 +61,7 @@ new class extends Component
                         <a 
                             href="{{ route('group') }}" 
                             class="inline-flex items-center justify-center px-8 py-4 text-sm font-semibold tracking-wider uppercase text-white border border-white/40 dark:border-gray-500 rounded-md hover:bg-white/10 dark:hover:bg-gray-800/50 transition-all duration-200 backdrop-blur-sm"
-                        >
+                        >  
                             About The Group
                         </a>
                     </div>
