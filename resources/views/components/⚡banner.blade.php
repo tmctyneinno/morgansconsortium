@@ -8,8 +8,8 @@ new class extends Component
     public string $title = '';
     public string $subtitle = '';
     public bool $entryTable = false;
-    
-    // New properties for the register table
+
+    // Register entry table (shown only when $entryTable is true)
     public string $registerEntry = '';
     public string $category = '';
     public string $brandSite = '';
@@ -18,74 +18,80 @@ new class extends Component
 ?>
 
 <div>
-    <section class="relative bg-gradient-to-br from-[#0C1832] to-[#070F20] dark:from-[#050a14] dark:to-[#020408] py-20 lg:py-20 transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-6">
-            <div>
-                
-                {{-- Top Label with Red Accent --}}
-                <div class="flex items-center space-x-4 mb-8">
-                    <div class="h-[2px] w-12 bg-[#c41e3a]"></div>
-                    <span class="text-[#c41e3a] text-xs font-bold tracking-[0.2em] uppercase"> {{ $leading }} </span>
-                </div> 
+    <section class="relative isolate overflow-hidden bg-gradient-to-br from-[#0C1832] to-[#070F20] transition-colors duration-300 dark:from-[#050a14] dark:to-[#020408]">
 
-                {{-- Main Heading --}}
-                <h1 class="text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-white leading-tight mb-8">
-                    {{ $title }}
-                </h1>
+        {{-- Soft highlight for depth --}}
+        <div class="pointer-events-none absolute -left-24 -top-24 -z-10 h-96 w-96 rounded-full bg-[#1e3a5f]/20 blur-3xl dark:bg-[#1e3a5f]/10" aria-hidden="true"></div>
 
-                {{-- Description --}}
-                <p class="text-lg text-gray-300 dark:text-gray-400 leading-relaxed max-w-3xl mb-12">
+        <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+
+            {{-- Eyebrow --}}
+            @if ($leading !== '')
+                <div class="flex items-center gap-4">
+                    <span class="h-[2px] w-12 bg-[#e0334f]"></span>
+                    <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#e0334f]">
+                        {{ $leading }}
+                    </span>
+                </div>
+            @endif
+
+            {{-- Heading --}}
+            <h1 class="mt-6 max-w-3xl font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
+                {{ $title }}
+            </h1>
+
+            {{-- Description --}}
+            @if ($subtitle !== '')
+                <p class="mt-6 max-w-2xl text-base leading-relaxed text-gray-300 dark:text-gray-400">
                     {{ $subtitle }}
                 </p>
+            @endif
 
-                {{-- Register Entry Table --}}
-                @if($entryTable)
-                <div class="w-full border border-gray-600/30 dark:border-gray-700/50 rounded-sm overflow-hidden bg-white/5 dark:bg-white/5 backdrop-blur-sm">
-                    <div class="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-gray-600/30 dark:divide-gray-700/50">
-                        
-                        {{-- Register Entry --}}
-                        <div class="p-6 lg:p-8">
-                            <span class="block text-gray-400 dark:text-gray-500 text-xs font-bold tracking-[0.15em] uppercase mb-2">
-                                Register Entry
-                            </span>
-                            <span class="text-xl lg:text-2xl font-serif font-bold text-white">
-                                {{ $registerEntry }}
-                            </span>
-                        </div>
-
-                        {{-- Category --}}
-                        <div class="p-6 lg:p-8">
-                            <span class="block text-gray-400 dark:text-gray-500 text-xs font-bold tracking-[0.15em] uppercase mb-2">
-                                Category
-                            </span>
-                            <span class="text-xl lg:text-2xl font-serif font-bold text-white">
-                                {{ $category }}
-                            </span>
-                        </div>
-
-                        {{-- Brand Site --}}
-                        <div class="p-6 lg:p-8">
-                            <span class="block text-gray-400 dark:text-gray-500 text-xs font-bold tracking-[0.15em] uppercase mb-2">
-                                Brand Site
-                            </span>
-                            <a 
-                                href="{{ $brandUrl }}" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                class="inline-flex items-center text-xl lg:text-2xl font-serif font-bold text-[#c41e3a] hover:text-red-400 transition-colors group"
-                            >
-                                {{ $brandSite }}
-                                <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                </svg>
-                            </a>
-                        </div>
-
+            {{-- Register entry table --}}
+            @if ($entryTable)
+                <dl class="mt-12 grid grid-cols-1 gap-px overflow-hidden border border-white/15 bg-white/15 backdrop-blur-sm dark:border-white/10 dark:bg-white/10 sm:grid-cols-3">
+                    <div class="bg-[#0C1832] px-6 py-5 dark:bg-[#050a14]">
+                        <dt class="text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 dark:text-gray-500">
+                            Register Entry
+                        </dt>
+                        <dd class="mt-2 font-serif text-lg font-semibold text-white lg:text-xl">
+                            {{ $registerEntry }}
+                        </dd>
                     </div>
-                </div>
 
-                @endif
-            </div>
+                    <div class="bg-[#0C1832] px-6 py-5 dark:bg-[#050a14]">
+                        <dt class="text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 dark:text-gray-500">
+                            Category
+                        </dt>
+                        <dd class="mt-2 font-serif text-lg font-semibold text-white lg:text-xl">
+                            {{ $category }}
+                        </dd>
+                    </div>
+
+                    <div class="bg-[#0C1832] px-6 py-5 dark:bg-[#050a14]">
+                        <dt class="text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400 dark:text-gray-500">
+                            Brand Site
+                        </dt>
+                        <dd class="mt-2">
+                            @if ($brandUrl !== '')
+                                <a
+                                    href="{{ $brandUrl }}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="group inline-flex items-center gap-2 font-serif text-lg font-semibold text-[#e0334f] transition-colors hover:text-[#ff6b84] focus:outline-none focus-visible:underline lg:text-xl"
+                                >
+                                    {{ $brandSite }}
+                                    <svg class="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                </a>
+                            @else
+                                <span class="font-serif text-lg font-semibold text-white lg:text-xl">{{ $brandSite }}</span>
+                            @endif
+                        </dd>
+                    </div>
+                </dl>
+            @endif
         </div>
     </section>
 </div>

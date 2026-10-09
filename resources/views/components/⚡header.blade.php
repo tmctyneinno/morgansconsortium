@@ -59,62 +59,7 @@ new class extends Component
 ?>
 
 <div>
-    {{-- Top Bar with World Clocks --}}
-    <div class="bg-[#1e3a5f] dark:bg-gray-950 border-b border-[#0f1f33] dark:border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-10 text-xs">
-                {{-- World Clocks --}}
-                <div class="flex items-center space-x-6" x-data="{
-                    times: {
-                        lagos: '',
-                        london: '',
-                        newyork: '',
-                        dubai: ''
-                    },
-                    updateTime() {
-                        const options = { 
-                            hour: '2-digit', 
-                            minute: '2-digit', 
-                            hour12: false,
-                            timeZone: 'Africa/Lagos'
-                        };
-                        this.times.lagos = new Intl.DateTimeFormat('en-US', options).format(new Date());
-                        
-                        options.timeZone = 'Europe/London';
-                        this.times.london = new Intl.DateTimeFormat('en-US', options).format(new Date());
-                        
-                        options.timeZone = 'America/New_York';
-                        this.times.newyork = new Intl.DateTimeFormat('en-US', options).format(new Date());
-                        
-                        options.timeZone = 'Asia/Dubai';
-                        this.times.dubai = new Intl.DateTimeFormat('en-US', options).format(new Date());
-                    }
-                }" x-init="updateTime(); setInterval(updateTime, 1000)">
-                    <div class="flex items-center space-x-2">
-                        <span class="text-[#c41e3a] font-semibold">LAGOS</span>
-                        <span class="text-gray-300" x-text="times.lagos"></span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <span class="text-[#c41e3a] font-semibold">LONDON</span>
-                        <span class="text-gray-300" x-text="times.london"></span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <span class="text-[#c41e3a] font-semibold">NEW YORK</span>
-                        <span class="text-gray-300" x-text="times.newyork"></span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <span class="text-[#c41e3a] font-semibold">DUBAI</span>
-                        <span class="text-gray-300" x-text="times.dubai"></span>
-                    </div>
-                </div>
-                
-                {{-- Tagline --}}
-                <div class="hidden md:block">
-                    <span class="text-gray-300 tracking-wider text-xs uppercase">A Global Group of Companies</span>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     {{-- Main Header --}}
     <header class="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-100 dark:border-gray-800 sticky top-10 z-50">

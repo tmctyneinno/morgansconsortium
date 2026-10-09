@@ -2,7 +2,7 @@
 
 @section('title', 'THE MORGANS | A Global Group of Companies')
 
-@section('content')
+@section('content') 
      <livewire:home.hero />
      <livewire:home.who-are-we />
      <livewire:home.group-register />

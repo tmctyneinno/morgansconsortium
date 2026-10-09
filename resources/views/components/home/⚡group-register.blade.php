@@ -4,187 +4,185 @@ use Livewire\Component;
 
 new class extends Component
 {
-    public $divisions = [
+    public array $divisions = [
         [
             'id' => '01',
             'title' => 'Advisory & Assurance',
-            'category' => 'ADVISORY',
+            'category' => 'Advisory',
             'description' => "The group's international advisory practice — governance, enterprise risk, regulatory compliance and financial-crime prevention for banks, insurers, fintechs and public institutions worldwide.",
-            'links' => [['text' => 'VISIT DIVISION', 'url' => 'advisory-assurance']]
+            'links' => [['text' => 'Visit Division', 'url' => 'advisory-assurance']],
         ],
         [
             'id' => '02',
             'title' => 'OysterChecks - Risk & Assurance Intelligence',
-            'category' => 'TECHNOLOGY',
-            'description' => "A unified, AI-driven risk and assurance intelligence platform — real-time identity verification, global background screening, KYC/KYB, AML surveillance and continuous control monitoring, built to help organisations prove trust in real time.",
+            'category' => 'Technology',
+            'description' => 'A unified, AI-driven risk and assurance intelligence platform — real-time identity verification, global background screening, KYC/KYB, AML surveillance and continuous control monitoring, built to help organisations prove trust in real time.',
             'links' => [
-                ['text' => 'VISIT DIVISION', 'url' => 'oysterChecks'],
-                ['text' => 'OYSTERCHECKS.COM', 'url' => 'oysterChecks', 'external' => true]
-            ]
+                ['text' => 'Visit Division', 'url' => 'oysterChecks'],
+                ['text' => 'OysterChecks.com', 'url' => 'oysterChecks', 'external' => true],
+            ],
         ],
         [
             'id' => '03',
             'title' => 'TMC Institute',
-            'category' => 'INSTITUTIONAL',
+            'category' => 'Institutional',
             'description' => "The group's executive education arm — board-level programmes, professional certification pathways and bespoke corporate academies, delivered to international cohorts in person and online.",
             'links' => [
-                ['text' => 'VISIT DIVISION', 'url' => 'tmc-institute'],
-                ['text' => 'TMCINSTITUTE.COM', 'url' => 'tmc-institute', 'external' => true]
-            ]
+                ['text' => 'Visit Division', 'url' => 'tmc-institute'],
+                ['text' => 'TMCInstitute.com', 'url' => 'tmc-institute', 'external' => true],
+            ],
         ],
         [
             'id' => '04',
             'title' => 'GRC & FinCrime Prevention Awards & Summit',
-            'category' => 'INSTITUTIONAL',
+            'category' => 'Institutional',
             'description' => "The profession's flagship awards and summit — now in its 7th annual edition, staged across two global editions in 2026: London on 6 November and Nairobi on 20 November, with six award pillars and 40+ categories.",
             'links' => [
-                ['text' => 'VISIT DIVISION', 'url' => 'grc-fincrime-prevention-awards-summit'],
-                ['text' => 'GRCFINCRIMEAWARDS.COM', 'url' => 'grc-fincrime-prevention-awards-summit', 'external' => true]
-            ]
+                ['text' => 'Visit Division', 'url' => 'grc-fincrime-prevention-awards-summit'],
+                ['text' => 'GRCFinCrimeAwards.com', 'url' => 'grc-fincrime-prevention-awards-summit', 'external' => true],
+            ],
         ],
         [
             'id' => '05',
             'title' => 'WGRCFP - Women in GRC & FinCrime Prevention',
-            'category' => 'INSTITUTIONAL',
-            'description' => "A worldwide community and structured mentorship programme advancing women in governance, risk, compliance and financial-crime prevention — with measured outcomes, not just good intentions.",
+            'category' => 'Institutional',
+            'description' => 'A worldwide community and structured mentorship programme advancing women in governance, risk, compliance and financial-crime prevention — with measured outcomes, not just good intentions.',
             'links' => [
-                ['text' => 'VISIT DIVISION', 'url' => 'wgrcfp'],
-                ['text' => 'WGRCFP.ORG', 'url' => 'wgrcfp', 'external' => true]
-            ]
+                ['text' => 'Visit Division', 'url' => 'wgrcfp'],
+                ['text' => 'WGRCFP.org', 'url' => 'wgrcfp', 'external' => true],
+            ],
         ],
         [
             'id' => '06',
             'title' => 'Portrec Resourcing - Talent & Workforce',
-            'category' => 'ENTERPRISE SERVICES',
+            'category' => 'Enterprise Services',
             'description' => "The group's recruitment and workforce brand — executive search, specialist recruitment and managed outsourcing, with dedicated candidate portals serving markets on multiple continents.",
             'links' => [
-                ['text' => 'VISIT DIVISION', 'url' => 'portrec-resourcing'],
-                ['text' => 'PORTREC.CO.UK', 'url' => 'portrec-resourcing', 'external' => true]
-            ]
+                ['text' => 'Visit Division', 'url' => 'portrec-resourcing'],
+                ['text' => 'Portrec.co.uk', 'url' => 'portrec-resourcing', 'external' => true],
+            ],
         ],
         [
             'id' => '07',
             'title' => 'Tyneside Innovation - Technology & Digital',
-            'category' => 'TECHNOLOGY',
+            'category' => 'Technology',
             'description' => "The group's technology and digital agency — web and app development, enterprise IT solutions, digital marketing, SEO and brand design, with more than 2,000 clients served across three continents.",
             'links' => [
-                ['text' => 'VISIT DIVISION', 'url' => 'tyneside-innovation'],
-                ['text' => 'TYNESIDEINNOVATION.COM', 'url' => 'tyneside-innovation', 'external' => true]
-            ]
+                ['text' => 'Visit Division', 'url' => 'tyneside-innovation'],
+                ['text' => 'TynesideInnovation.com', 'url' => 'tyneside-innovation', 'external' => true],
+            ],
         ],
         [
             'id' => '08',
             'title' => 'Procurement & Supply Chain',
-            'category' => 'ENTERPRISE SERVICES',
-            'description' => "International sourcing, negotiation and supply-chain management run with the transparency and value discipline of an institutional buyer — from single tenders to full category management.",
-            'links' => [['text' => 'VISIT DIVISION', 'url' => 'procurement-supply-chain']]
+            'category' => 'Enterprise Services',
+            'description' => 'International sourcing, negotiation and supply-chain management run with the transparency and value discipline of an institutional buyer — from single tenders to full category management.',
+            'links' => [['text' => 'Visit Division', 'url' => 'procurement-supply-chain']],
         ],
         [
             'id' => '09',
             'title' => 'Real Estate & Property Development',
-            'category' => 'ENTERPRISE SERVICES',
-            'description' => "Development, investment and asset management across residential and commercial portfolios — pairing high-growth markets with institutional discipline and independently verified diligence.",
-            'links' => [['text' => 'VISIT DIVISION', 'url' => '#']]
+            'category' => 'Enterprise Services',
+            'description' => 'Development, investment and asset management across residential and commercial portfolios — pairing high-growth markets with institutional discipline and independently verified diligence.',
+            'links' => [['text' => 'Visit Division', 'url' => '#']],
         ],
         [
             'id' => '10',
             'title' => 'Facilities & Infrastructure Management',
-            'category' => 'ENTERPRISE SERVICES',
-            'description' => "Integrated facilities management for estates, offices and operational sites — keeping mission-critical environments running safely, efficiently and to a single global standard.",
-            'links' => [['text' => 'VISIT DIVISION', 'url' => 'facilities-infrastructure-management']]
+            'category' => 'Enterprise Services',
+            'description' => 'Integrated facilities management for estates, offices and operational sites — keeping mission-critical environments running safely, efficiently and to a single global standard.',
+            'links' => [['text' => 'Visit Division', 'url' => 'facilities-infrastructure-management']],
         ],
         [
             'id' => '11',
             'title' => 'Tyneprints - Print & Brand Production',
-            'category' => 'ENTERPRISE SERVICES',
+            'category' => 'Enterprise Services',
             'description' => "The group's print and brand-production house — an online print platform delivering business stationery, large-format signage, corporate gifts and event collateral to homes and businesses, with instant quotes and doorstep delivery.",
             'links' => [
-                ['text' => 'VISIT DIVISION', 'url' => 'tyneprints'],
-                ['text' => 'TYNEPRINTS.COM', 'url' => 'tyneprints', 'external' => true]
-            ]
+                ['text' => 'Visit Division', 'url' => 'tyneprints'],
+                ['text' => 'Tyneprints.com', 'url' => 'tyneprints', 'external' => true],
+            ],
         ],
     ];
 };
 ?>
- 
+
 <div>
-    <section class="py-20 lg:py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {{-- Header Section --}}
-        <div class="mb-6 max-w-3xl">
-            <div class="flex items-center space-x-4 mb-4">
-                <div class="h-[2px] w-12 bg-[#c41e3a]"></div>
-                <span class="text-[#c41e3a] text-xs font-bold tracking-[0.2em] uppercase">The Group Register</span>
+    <section class="bg-[#faf9f6] transition-colors duration-300 dark:bg-gray-950">
+        <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+
+            {{-- Header --}}
+            <div class="max-w-2xl">
+                <div class="flex items-center gap-4">
+                    <span class="h-[2px] w-12 bg-[#c41e3a] dark:bg-[#ef4565]"></span>
+                    <span class="text-xs font-medium uppercase italic tracking-wide text-[#c41e3a] dark:text-[#ef4565]">
+                        The Group Register
+                    </span>
+                </div>
+
+                <h2 class="mt-3 font-serif text-3xl font-bold tracking-tight text-[#1e3a5f] dark:text-gray-50 lg:text-4xl">
+                    Eleven lines of business, one register.
+                </h2>
+
+                <p class="mt-4 max-w-lg text-sm leading-relaxed text-[#1e3a5f]/80 dark:text-gray-400">
+                    Each entry below is an operating company or division of the group. Select an entry to read its
+                    remit, or visit the brand directly.
+                </p>
             </div>
-            
-            <h2 class="text-5xl lg:text-4xl font-serif font-bold text-[#1e3a5f] dark:text-white mb-6">
-                Eleven lines of business, one register.
-            </h2>
-            
-            <p class="text-lg text-[#1e3a5f]/70 dark:text-gray-400 leading-relaxed">
-                Each entry below is an operating company or division of the group. Select an entry to read its remit, or visit the brand directly.
-            </p>
-        </div>
 
-        {{-- List Section --}}
-        <div class="border-t border-gray-200 dark:border-gray-800">
-            @foreach($divisions as $division)
-                <div class="group border-b border-gray-200 dark:border-gray-800 py-5 lg:py-5 hover:bg-white dark:hover:bg-gray-800/50 transition-colors duration-300">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-                        
-                        {{-- Index Number --}}
-                        <div class="lg:col-span-1">
-                            <span class="text-[#c41e3a] font-serif font-bold text-sm tracking-wider">M.{{ $division['id'] }}</span>
-                        </div>
+            {{-- Register list --}}
+            <ul class="mt-10 border-t border-gray-300 dark:border-gray-700">
+                @foreach ($divisions as $division)
+                    <li
+                        wire:key="division-{{ $division['id'] }}"
+                        class="group border-b border-gray-300 transition-colors duration-300 hover:bg-white dark:border-gray-700 dark:hover:bg-gray-900"
+                    >
+                        <div class="grid grid-cols-12 items-center gap-x-4 gap-y-3 px-1 py-5 sm:px-3">
 
-                        {{-- Content (Title & Description) --}}
-                        <div class="lg:col-span-7 space-y-0">
-                            <h3 class="text-2xl lg:text-3xl font-serif font-bold text-[#1e3a5f] dark:text-white group-hover:text-[#c41e3a] dark:group-hover:text-[#c41e3a] transition-colors duration-300">
-                                {{ $division['title'] }}
-                            </h3>
-                            <p class="text-[#1e3a5f]/70 dark:text-gray-400 leading-relaxed text-sm lg:text-base">
-                                {{ $division['description'] }}
-                            </p>
-                        </div>
+                            {{-- Index --}}
+                            <div class="col-span-12 sm:col-span-1">
+                                <span class="font-serif text-[11px] font-semibold tracking-wider text-[#c41e3a] dark:text-[#ef4565]">
+                                    M.{{ $division['id'] }}
+                                </span>
+                            </div>
 
-                        {{-- Meta (Category & Links) --}}
-                        <div class="lg:col-span-4 flex flex-col justify-between items-start lg:items-end space-y-6 lg:space-y-0">
-                            
-                            {{-- Category Tag --}}
-                            <div class="flex items-center space-x-3">
-                                <span class="px-3 py-1 text-[10px] font-bold tracking-widest uppercase border border-gray-300 dark:border-gray-600 text-gray-500 dark:text-gray-400 rounded-full">
+                            {{-- Category + title --}}
+                            <div class="col-span-12 sm:col-span-7">
+                                <span class="inline-block rounded-full border border-gray-300 px-2.5 py-0.5 text-[9px] font-medium uppercase tracking-[0.15em] text-gray-500 dark:border-gray-600 dark:text-gray-400">
                                     {{ $division['category'] }}
                                 </span>
-                                <div class="h-px w-8 bg-gray-300 dark:bg-gray-600"></div>
+
+                                <h3 class="mt-1.5 font-serif text-lg font-semibold leading-snug text-[#1e3a5f] transition-colors duration-300 group-hover:text-[#c41e3a] dark:text-gray-50 dark:group-hover:text-[#ef4565] lg:text-xl">
+                                    {{ $division['title'] }}
+                                </h3>
                             </div>
 
                             {{-- Links --}}
-                            <div class="flex flex-col items-start lg:items-end space-y-2">
-                                @foreach($division['links'] as $link)
-                                    <a 
-                                        href="{{ $link['url'] }}" 
-                                        class="inline-flex items-center text-xs font-bold tracking-wider uppercase text-[#c41e3a] hover:text-[#a01830] dark:hover:text-red-400 transition-colors group/link"
+                            <div class="col-span-12 flex flex-col items-start gap-1.5 sm:col-span-4 sm:items-end sm:pr-4">
+                                @foreach ($division['links'] as $link)
+                                    <a
+                                        href="{{ $link['url'] === '#' ? '#' : url($link['url']) }}"
+                                        wire:navigate
+                                        class="group/link inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.15em] text-[#c41e3a] transition-colors hover:text-[#8f1429] focus:outline-none focus-visible:underline dark:text-[#ef4565] dark:hover:text-[#ff8da1]"
                                     >
                                         {{ $link['text'] }}
-                                        @if(isset($link['external']))
-                                            <svg class="w-3 h-3 ml-1 transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+
+                                        @if (! empty($link['external']))
+                                            <svg class="h-2.5 w-2.5 transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                             </svg>
                                         @else
-                                            <svg class="w-3 h-3 ml-1 transform group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                            <svg class="h-2.5 w-2.5 transition-transform duration-200 group-hover/link:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                             </svg>
                                         @endif
                                     </a>
                                 @endforeach
                             </div>
                         </div>
-
-                    </div>
-                </div>
-            @endforeach
+                    </li>
+                @endforeach
+            </ul>
         </div>
-    </div>
-</section>
+    </section>
 </div>

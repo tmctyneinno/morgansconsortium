@@ -4,144 +4,187 @@ use Livewire\Component;
 
 new class extends Component
 {
-    public $email = '';
+    public string $email = '';
 
-    public function subscribe()
+    public array $groupLinks = [
+        ['label' => 'Advisory & Assurance', 'route' => 'advisory-assurance'],
+        ['label' => 'OysterChecks', 'route' => 'risk-assurance-intelligence'],
+        ['label' => 'TMC Institute', 'route' => null],
+        ['label' => 'GRC & FinCrime Prevention Awards & Summit', 'route' => null],
+        ['label' => 'WGRCFP', 'route' => null],
+        ['label' => 'Portrec: Resourcing', 'route' => null],
+        ['label' => 'Tyneside Innovation', 'route' => null],
+        ['label' => 'View the full register', 'route' => null],
+    ];
+
+    public array $companyLinks = [
+        ['label' => 'About THE MORGANS', 'route' => null],
+        ['label' => 'Leadership & Council', 'route' => null],
+        ['label' => 'Institutional Bodies', 'route' => null],
+        ['label' => 'Careers', 'route' => null],
+        ['label' => 'Contact us', 'route' => null],
+        ['label' => 'Privacy policy', 'route' => null],
+    ];
+
+    public array $socials = [
+        ['label' => 'LinkedIn', 'url' => '#'],
+        ['label' => 'Facebook', 'url' => '#'],
+        ['label' => 'Instagram', 'url' => '#'],
+    ];
+
+    public function subscribe(): void
     {
-        // Logic to handle subscription would go here
-        $this->email = ''; // Reset after submit
+        $this->validate(['email' => 'required|email']);
+
+        // Subscription logic goes here (e.g. store the address / call your mailing provider).
+
+        $this->reset('email');
         session()->flash('message', 'Thank you for subscribing!');
     }
 };
 ?>
 
 <div>
-   
     {{-- ========================================== --}}
     {{-- CTA SECTION --}}
     {{-- ========================================== --}}
-    <section class="relative bg-[#1C2A59] dark:bg-[#172554] py-10 lg:py-10 overflow-hidden transition-colors duration-300">
-        
-        {{-- Decorative Background Circles --}}
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full border border-[#c41e3a]/20 dark:border-[#c41e3a]/10 pointer-events-none"></div>
-        <div class="absolute top-10 right-10 w-72 h-72 rounded-full border border-[#c41e3a]/30 dark:border-[#c41e3a]/20 pointer-events-none"></div>
+    <section class="relative overflow-hidden bg-[#1C2A59] transition-colors duration-300 dark:bg-[#172554]">
 
-        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
-                
-                {{-- CTA Text --}}
-                <div class="lg:w-2/3">
-                    <h2 class="text-4xl lg:text-4xl xl:text-5xl font-serif font-bold text-white leading-tight">
-                        Wherever you operate,<br>
-                        we would love to help<br>
-                        your business <span class="text-[#c41e3a] italic">thrive</span>.
-                    </h2>
-                </div>
+        {{-- Decorative rings --}}
+        <div class="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full border border-[#c41e3a]/30 dark:border-[#c41e3a]/20" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute -right-8 -top-14 h-60 w-60 rounded-full border border-[#c41e3a]/40 dark:border-[#c41e3a]/25" aria-hidden="true"></div>
 
-                {{-- CTA Button --}}
-                <div class="lg:w-1/3 flex justify-center lg:justify-end">
-                    <a 
-                        href="#" 
-                        class="inline-flex items-center px-10 py-5 text-sm font-bold tracking-[0.2em] uppercase text-white bg-[#c41e3a] rounded-sm hover:bg-[#a01830] transition-all duration-200 shadow-lg shadow-[#c41e3a]/20 group"
-                    >
-                        Get In Touch
-                        <svg class="w-5 h-5 ml-3 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                    </a>
-                </div>
+        <div class="relative mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+                <h2 class="max-w-xl font-serif text-2xl font-semibold leading-snug text-white sm:text-3xl">
+                    Wherever you operate, we would love to help your business
+                    <span class="italic text-[#e0334f]">thrive</span>.
+                </h2>
+
+                <a
+                    href="#"
+                    class="group inline-flex shrink-0 items-center justify-center gap-3 self-start rounded-md bg-[#b01c34] px-9 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white shadow-lg shadow-black/20 transition-all duration-200 hover:bg-[#c41e3a] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1C2A59] dark:focus-visible:ring-offset-[#172554] lg:self-auto"
+                >
+                    Get In Touch
+                    <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
 
     {{-- ========================================== --}}
-    {{-- FOOTER SECTION --}}
+    {{-- FOOTER --}}
     {{-- ========================================== --}}
-    <footer class="bg-[#0C1832] dark:bg-black text-gray-400 pt-20 pb-10 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-                
-                {{-- Brand Column --}}
-                <div class="lg:col-span-4 space-y-6">
-                    <div class="flex items-center space-x-3">
-                        {{-- Simple Logo Placeholder --}}
-                        <img src="{{ asset('assets/footer_logo.png') }}" alt="THE MORGANS Logo" class="h-10 w-auto">
-                     </div>
-                    <p class="text-gray-400 dark:text-gray-500 leading-relaxed max-w-sm">
-                        A global group of companies helping organisations discover the pivot points of accelerated performance, growth and profitability.
+    <footer class="bg-[#0C1832] text-gray-400 transition-colors duration-300 dark:bg-[#050a14]">
+        <div class="mx-auto max-w-5xl px-4 pb-8 pt-14 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+
+                {{-- Brand --}}
+                <div class="lg:col-span-4">
+                    <img src="{{ asset('assets/footer_logo.png') }}" alt="THE MORGANS" class="h-10 w-auto">
+                    <p class="mt-5 max-w-xs text-sm leading-relaxed text-gray-400 dark:text-gray-500">
+                        A global group of companies helping organisations discover the pivot points of accelerated
+                        performance, growth and profitability.
                     </p>
                 </div>
 
-                {{-- Links Column 1 --}}
-                <div class="lg:col-span-2 lg:col-start-6">
-                    <h4 class="text-[#c41e3a] text-xs font-bold tracking-[0.15em] uppercase mb-6">The Group</h4>
-                    <ul class="space-y-4 text-sm">
-                        <li><a href="{{ route('advisory-assurance') }}" class="hover:text-white transition-colors">Advisory & Assurance</a></li>
-                        <li><a href="{{ route('risk-assurance-intelligence') }}" class="hover:text-white transition-colors">OysterChecks</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">TMC Institute</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">GRC & FinCrime Prevention Awards & Summit</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">WGRCFP</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Portrec: Resourcing</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Tyneside Innovation</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">View the full register</a></li>
+                {{-- The Group --}}
+                <nav class="lg:col-span-3" aria-label="The Group">
+                    <h4 class="text-[11px] font-bold uppercase tracking-[0.15em] text-[#e0334f]">The Group</h4>
+                    <ul class="mt-5 space-y-3 text-[13px]">
+                        @foreach ($groupLinks as $link)
+                            <li wire:key="group-link-{{ $loop->index }}">
+                                <a
+                                    href="{{ $link['route'] ? route($link['route']) : '#' }}"
+                                    @if ($link['route']) wire:navigate @endif
+                                    class="transition-colors hover:text-white focus:outline-none focus-visible:text-white focus-visible:underline"
+                                >
+                                    {{ $link['label'] }}
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
-                </div>
+                </nav>
 
-                {{-- Links Column 2 --}}
-                <div class="lg:col-span-2">
-                    <h4 class="text-[#c41e3a] text-xs font-bold tracking-[0.15em] uppercase mb-6">The Group</h4>
-                    <ul class="space-y-4 text-sm">
-                        <li><a href="#" class="hover:text-white transition-colors">About THE MORGANS</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Leadership & Council</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Institutional Bodies</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Contact us</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Privacy policy</a></li>
+                {{-- Company --}}
+                <nav class="lg:col-span-2" aria-label="Company">
+                    <h4 class="text-[11px] font-bold uppercase tracking-[0.15em] text-[#e0334f]">Company</h4>
+                    <ul class="mt-5 space-y-3 text-[13px]">
+                        @foreach ($companyLinks as $link)
+                            <li wire:key="company-link-{{ $loop->index }}">
+                                <a
+                                    href="{{ $link['route'] ? route($link['route']) : '#' }}"
+                                    class="transition-colors hover:text-white focus:outline-none focus-visible:text-white focus-visible:underline"
+                                >
+                                    {{ $link['label'] }}
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
-                </div>
+                </nav>
 
-                {{-- Newsletter Column --}}
+                {{-- Newsletter --}}
                 <div class="lg:col-span-3">
-                    <h4 class="text-[#c41e3a] text-xs font-bold tracking-[0.15em] uppercase mb-6">Connect With Us</h4>
-                    <p class="text-sm mb-4 text-gray-300 dark:text-gray-400">Sign up for our newsletter</p>
-                    
-                    <form wire:submit.prevent="subscribe" class="flex flex-col sm:flex-row gap-2 mb-4">
-                        <input 
-                            type="email" 
+                    <h4 class="text-[11px] font-bold uppercase tracking-[0.15em] text-[#e0334f]">Connect With Us</h4>
+                    <p class="mt-5 text-[13px] text-gray-300 dark:text-gray-400">Sign up for our newsletter</p>
+
+                    <form wire:submit="subscribe" class="mt-3 flex" novalidate>
+                        <label for="newsletter-email" class="sr-only">Email address</label>
+                        <input
+                            id="newsletter-email"
+                            type="email"
                             wire:model="email"
-                            placeholder="Your email address" 
-                            class="w-full px-4 py-3 bg-transparent border border-gray-700 dark:border-gray-800 text-white placeholder-gray-500 focus:outline-none focus:border-[#c41e3a] transition-colors text-sm"
-                            required
+                            placeholder="Your email address"
+                            autocomplete="email"
+                            class="min-w-0 flex-1 border border-white/15 bg-transparent px-3 py-2.5 text-[13px] text-white placeholder-gray-500 transition-colors focus:border-[#e0334f] focus:outline-none dark:border-white/10"
                         >
-                        <button 
-                            type="submit" 
-                            class="px-6 py-3 bg-[#c41e3a] text-white text-xs font-bold tracking-wider uppercase hover:bg-[#a01830] transition-colors whitespace-nowrap"
+                        <button
+                            type="submit"
+                            wire:loading.attr="disabled"
+                            wire:target="subscribe"
+                            class="whitespace-nowrap bg-[#b01c34] px-4 py-2.5 text-[10px] font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#c41e3a] focus:outline-none focus-visible:ring-2 focus-visible:ring-white disabled:cursor-not-allowed disabled:opacity-60"
                         >
                             Sign Up
                         </button>
                     </form>
-                    
-                    <p class="text-xs text-gray-500 dark:text-gray-600 leading-relaxed">
-                        By signing up, I agree that THE MORGANS and its affiliates may use my contact details to send me communications.
+
+                    @error('email')
+                        <p class="mt-2 text-xs text-[#ff6b84]" role="alert">{{ $message }}</p>
+                    @enderror
+
+                    @if (session()->has('message'))
+                        <p class="mt-2 text-xs text-emerald-400" role="status">{{ session('message') }}</p>
+                    @endif
+
+                    <p class="mt-3 text-xs leading-relaxed text-gray-500 dark:text-gray-600">
+                        By signing up, I agree that THE MORGANS and its affiliates may use my contact details to send
+                        me communications.
                     </p>
                 </div>
             </div>
 
-            {{-- Bottom Bar --}}
-            <div class="border-t border-gray-800 dark:border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-600">
-                <div class="text-center md:text-left">
-                    Copyright &copy; 2020-2026 THE MORGANS. All rights reserved. &middot; Lagos &middot; London &middot; New York
-                </div>
-                
-                <div class="flex space-x-6">
-                    <a href="#" class="hover:text-white transition-colors font-bold tracking-wider">LINKEDIN</a>
-                    <a href="#" class="hover:text-white transition-colors font-bold tracking-wider">FACEBOOK</a>
-                    <a href="#" class="hover:text-white transition-colors font-bold tracking-wider">INSTAGRAM</a>
-                </div>
-            </div>
+            {{-- Bottom bar --}}
+            <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-gray-500 dark:border-white/5 dark:text-gray-600 md:flex-row">
+                <p class="text-center md:text-left">
+                    Copyright &copy; 2020&ndash;2026 THE MORGANS. All rights reserved. &middot; Lagos &middot; London &middot; New York
+                </p>
 
+                <ul class="flex gap-6">
+                    @foreach ($socials as $social)
+                        <li wire:key="social-{{ $loop->index }}">
+                            <a
+                                href="{{ $social['url'] }}"
+                                class="text-[11px] font-bold uppercase tracking-wider text-gray-400 transition-colors hover:text-white dark:text-gray-500"
+                            >
+                                {{ $social['label'] }}
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
         </div>
     </footer>
-
 </div>

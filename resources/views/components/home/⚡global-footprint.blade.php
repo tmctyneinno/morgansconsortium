@@ -4,7 +4,7 @@ use Livewire\Component;
 
 new class extends Component
 {
-    public $regions = [
+    public array $regions = [
         [
             'name' => 'Africa',
             'cities' => [
@@ -12,7 +12,7 @@ new class extends Component
                 ['name' => 'Nairobi', 'is_primary' => false],
                 ['name' => 'Accra', 'is_primary' => false],
                 ['name' => 'Johannesburg', 'is_primary' => false],
-            ]
+            ],
         ],
         [
             'name' => 'Europe',
@@ -21,7 +21,7 @@ new class extends Component
                 ['name' => 'Ipswich', 'is_primary' => false],
                 ['name' => 'Cork', 'is_primary' => false],
                 ['name' => 'Frankfurt', 'is_primary' => false],
-            ]
+            ],
         ],
         [
             'name' => 'America',
@@ -29,7 +29,7 @@ new class extends Component
                 ['name' => 'New York', 'is_primary' => true, 'label' => 'US Office'],
                 ['name' => 'Toronto', 'is_primary' => false],
                 ['name' => 'Houston', 'is_primary' => false],
-            ]
+            ],
         ],
         [
             'name' => 'Middle East',
@@ -37,7 +37,7 @@ new class extends Component
                 ['name' => 'Dubai', 'is_primary' => false],
                 ['name' => 'Abu Dhabi', 'is_primary' => false],
                 ['name' => 'Riyadh', 'is_primary' => false],
-            ]
+            ],
         ],
         [
             'name' => 'Asia',
@@ -45,65 +45,68 @@ new class extends Component
                 ['name' => 'Singapore', 'is_primary' => false],
                 ['name' => 'Mumbai', 'is_primary' => false],
                 ['name' => 'Hong Kong', 'is_primary' => false],
-            ]
+            ],
         ],
     ];
 };
 ?>
 
 <div>
-    <section class="py-20 lg:py-25 bg-white dark:bg-gray-950 transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            {{-- Header Section --}}
-            <div class="mb-16 max-w-4xl">
-                <div class="flex items-center space-x-4 mb-6">
-                    <div class="h-[2px] w-12 bg-[#c41e3a]"></div>
-                    <span class="text-[#c41e3a] text-xs font-bold tracking-[0.2em] uppercase">Global Footprint</span>
+    <section class="bg-white transition-colors duration-300 dark:bg-gray-950">
+        <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+
+            {{-- Header --}}
+            <div class="max-w-3xl">
+                <div class="flex items-center gap-4">
+                    <span class="h-[2px] w-12 bg-[#c41e3a] dark:bg-[#ef4565]"></span>
+                    <span class="text-xs font-medium uppercase italic tracking-wide text-[#c41e3a] dark:text-[#ef4565]">
+                        Global Footprint
+                    </span>
                 </div>
-                
-                <h2 class="text-4xl lg:text-4xl xl:text-4xl font-serif font-bold text-[#1e3a5f] dark:text-white mb-6 leading-tight">
+
+                <h2 class="mt-3 font-serif text-3xl font-bold leading-tight tracking-tight text-[#1e3a5f] dark:text-gray-50 lg:text-4xl">
                     Offices on three continents. Working on five.
                 </h2>
-                
-                <p class="text-lg text-[#1e3a5f]/70 dark:text-gray-400 leading-relaxed max-w-3xl">
-                    Group offices anchor each region, with engagement teams, partner networks and screening coverage extending across borders wherever clients need us.
+
+                <p class="mt-4 max-w-xl text-sm leading-relaxed text-[#1e3a5f]/80 dark:text-gray-400">
+                    Group offices anchor each region, with engagement teams, partner networks and screening coverage
+                    extending across borders wherever clients need us.
                 </p>
             </div>
 
-            {{-- Regions Grid --}}
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden">
-                
-                @foreach($regions as $index => $region)
-                    <div class="p-7 lg:p-8 {{ $index < count($regions) - 1 ? 'border-r border-gray-200 dark:border-gray-800' : '' }} {{ $index < 3 ? 'md:border-b lg:border-b-0' : '' }} hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors duration-300">
-                        
-                        {{-- Region Name --}}
-                        <h3 class="text-2xl lg:text-2xl font-serif font-bold text-[#1e3a5f] dark:text-white mb-6">
+            {{-- Regions grid (1px gaps over a tinted background draw the borders at every breakpoint) --}}
+            <div class="mt-12 grid grid-cols-1 gap-px overflow-hidden border border-gray-300 bg-gray-300 dark:border-gray-700 dark:bg-gray-700 md:grid-cols-2 lg:grid-cols-5">
+                @foreach ($regions as $region)
+                    <div
+                        wire:key="region-{{ $loop->index }}"
+                        class="p-6 transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-gray-900 md:last:col-span-2 lg:last:col-span-1
+                            {{ $loop->odd ? 'bg-white dark:bg-gray-950' : 'bg-[#faf9f6] dark:bg-gray-900/60' }}"
+                    >
+                        <h3 class="font-serif text-xl font-bold text-[#1e3a5f] dark:text-gray-50">
                             {{ $region['name'] }}
                         </h3>
 
-                        {{-- Cities List --}}
-                        <ul class="space-y-3">
-                            @foreach($region['cities'] as $city)
-                                <li class="flex items-center">
-                                    @if($city['is_primary'])
-                                        <span class="text-[#c41e3a] font-semibold text-sm lg:text-base">
+                        <ul class="mt-4 space-y-3 text-[13px]">
+                            @foreach ($region['cities'] as $city)
+                                <li>
+                                    @if ($city['is_primary'])
+                                        <span class="font-medium text-[#c41e3a] dark:text-[#ef4565]">
                                             {{ $city['name'] }}
-                                            <span class="text-[#c41e3a]/70 text-xs lg:text-sm">- {{ $city['label'] }}</span>
+                                            @if (! empty($city['label']))
+                                                <span class="font-normal">- {{ $city['label'] }}</span>
+                                            @endif
                                         </span>
                                     @else
-                                        <span class="text-[#1e3a5f]/80 dark:text-gray-300 text-sm lg:text-base">
+                                        <span class="text-[#1e3a5f]/90 dark:text-gray-300">
                                             {{ $city['name'] }}
                                         </span>
                                     @endif
                                 </li>
                             @endforeach
                         </ul>
-
                     </div>
                 @endforeach
-
             </div>
         </div>
     </section>
-</div> 
+</div>
